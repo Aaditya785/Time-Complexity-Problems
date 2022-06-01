@@ -1,0 +1,25 @@
+public class Solution {
+
+	public static int findUnique(int[] arr) 
+    {
+		// for base case.
+        if(arr.length == 1)
+        {
+            return arr[0];
+        }
+        // for unique no in between the list from 0 to n-1.
+        for(int i=0;i<arr.length-1;i+=2)
+        {
+            if(arr[i]!=arr[i+1])
+            {
+                return arr[i];
+            }
+        }
+        // for unique element in the last of the list.
+        if(arr[arr.length-1]!=arr[arr.length-2])
+        {
+            return arr[arr.length-1];
+        }
+        return -1;
+	}
+}
